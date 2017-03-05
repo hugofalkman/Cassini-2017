@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		B18053BB1E6C5208005FA83A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18053BA1E6C5208005FA83A /* AppDelegate.swift */; };
-		B18053BD1E6C5208005FA83A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18053BC1E6C5208005FA83A /* ViewController.swift */; };
 		B18053C01E6C5208005FA83A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B18053BE1E6C5208005FA83A /* Main.storyboard */; };
 		B18053C21E6C5208005FA83A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18053C11E6C5208005FA83A /* Assets.xcassets */; };
 		B18053C51E6C5208005FA83A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B18053C31E6C5208005FA83A /* LaunchScreen.storyboard */; };
+		B18053CE1E6C531C005FA83A /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18053CD1E6C531C005FA83A /* ImageViewController.swift */; };
+		B18053D01E6C5E67005FA83A /* DemoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18053CF1E6C5E67005FA83A /* DemoURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B18053B71E6C5208005FA83A /* Cassini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cassini.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18053BA1E6C5208005FA83A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B18053BC1E6C5208005FA83A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B18053BF1E6C5208005FA83A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B18053C11E6C5208005FA83A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B18053C41E6C5208005FA83A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B18053C61E6C5208005FA83A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B18053CD1E6C531C005FA83A /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		B18053CF1E6C5E67005FA83A /* DemoURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		B18053B91E6C5208005FA83A /* Cassini */ = {
 			isa = PBXGroup;
 			children = (
-				B18053BA1E6C5208005FA83A /* AppDelegate.swift */,
-				B18053BC1E6C5208005FA83A /* ViewController.swift */,
+				B18053CD1E6C531C005FA83A /* ImageViewController.swift */,
 				B18053BE1E6C5208005FA83A /* Main.storyboard */,
-				B18053C11E6C5208005FA83A /* Assets.xcassets */,
-				B18053C31E6C5208005FA83A /* LaunchScreen.storyboard */,
+				B18053CF1E6C5E67005FA83A /* DemoURL.swift */,
 				B18053C61E6C5208005FA83A /* Info.plist */,
+				B18053CC1E6C524F005FA83A /* Supporting Files */,
 			);
 			path = Cassini;
+			sourceTree = "<group>";
+		};
+		B18053CC1E6C524F005FA83A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B18053BA1E6C5208005FA83A /* AppDelegate.swift */,
+				B18053C11E6C5208005FA83A /* Assets.xcassets */,
+				B18053C31E6C5208005FA83A /* LaunchScreen.storyboard */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +148,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B18053BD1E6C5208005FA83A /* ViewController.swift in Sources */,
+				B18053CE1E6C531C005FA83A /* ImageViewController.swift in Sources */,
 				B18053BB1E6C5208005FA83A /* AppDelegate.swift in Sources */,
+				B18053D01E6C5E67005FA83A /* DemoURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
