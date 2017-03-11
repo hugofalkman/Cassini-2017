@@ -10,17 +10,24 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
+    // MARK: Model
+    
     var imageURL: URL? {
         didSet {
             image = nil
-            if view.window != nil {
+            if view.window != nil { // if we're on screen
                 fetchImage()
             }
         }
     }
     
+    // MARK: Private Implementation
+    
     private func fetchImage() {
         if let url = imageURL {
+            // this next line of code can throw an error
+            // and it also will block the UI entirely while access the network
+            // we really should be doing it in a separate thread
             let urlContents = try? Data(contentsOf: url)
             if let imageData = urlContents {
                 image = UIImage(data: imageData)
@@ -28,10 +35,7 @@ class ImageViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        imageURL = DemoURL.stanford
-    }
+    // MARK: View Controller Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,6 +43,8 @@ class ImageViewController: UIViewController {
             fetchImage()
         }
     }
+    
+    // MARK: User Interface
     
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
@@ -59,10 +65,16 @@ class ImageViewController: UIViewController {
         set {
             imageView.image = newValue
             imageView.sizeToFit()
+            // scrollView might be nil
+            // so use optional chaining
             scrollView?.contentSize = imageView.frame.size
         }
     }
 }
+
+// MARK: UIScrollViewDelegate
+// Makes ImageViewController conform to UIScrollViewDelegate and
+// sets up viewForZooming optional ScrollView Delegate method
 
 extension ImageViewController : UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
