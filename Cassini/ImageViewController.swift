@@ -23,14 +23,20 @@ class ImageViewController: UIViewController {
     
     // MARK: Private Implementation
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     private func fetchImage() {
         if let url = imageURL {
-            // this next line of code can throw an error
-            // and it also will block the UI entirely while access the network
-            // we really should be doing it in a separate thread
-            let urlContents = try? Data(contentsOf: url)
-            if let imageData = urlContents {
-                image = UIImage(data: imageData)
+            
+            spinner.startAnimating()
+            
+            DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+                let urlContents = try? Data(contentsOf: url)
+                if let imageData = urlContents, url == self?.imageURL {
+                    DispatchQueue.main.async {
+                        self?.image = UIImage(data: imageData)
+                    }
+                }
             }
         }
     }
@@ -68,6 +74,8 @@ class ImageViewController: UIViewController {
             // scrollView might be nil
             // so use optional chaining
             scrollView?.contentSize = imageView.frame.size
+            
+            spinner?.stopAnimating()
         }
     }
 }

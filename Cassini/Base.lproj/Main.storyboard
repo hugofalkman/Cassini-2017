@@ -91,18 +91,25 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHD-7K-PEA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RBi-PM-rgD">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gHD-7K-PEA" firstAttribute="leading" secondItem="hU9-im-fkz" secondAttribute="leading" id="0M7-HN-lgj"/>
-                            <constraint firstItem="gHD-7K-PEA" firstAttribute="bottom" secondItem="DSl-Dl-C88" secondAttribute="top" id="E8I-9C-OTf"/>
-                            <constraint firstAttribute="trailing" secondItem="gHD-7K-PEA" secondAttribute="trailing" id="cS5-JB-LkY"/>
-                            <constraint firstItem="gHD-7K-PEA" firstAttribute="top" secondItem="hU9-im-fkz" secondAttribute="top" id="o1x-Wm-dzs"/>
+                            <constraint firstAttribute="trailing" secondItem="gHD-7K-PEA" secondAttribute="trailing" id="4hv-SA-iAq"/>
+                            <constraint firstItem="gHD-7K-PEA" firstAttribute="bottom" secondItem="DSl-Dl-C88" secondAttribute="top" id="BU1-9E-hPB"/>
+                            <constraint firstItem="gHD-7K-PEA" firstAttribute="top" secondItem="hU9-im-fkz" secondAttribute="top" id="a7I-R5-FFE"/>
+                            <constraint firstItem="gHD-7K-PEA" firstAttribute="leading" secondItem="hU9-im-fkz" secondAttribute="leading" id="ewC-4z-Ws4"/>
+                            <constraint firstItem="gHD-7K-PEA" firstAttribute="centerY" secondItem="RBi-PM-rgD" secondAttribute="centerY" id="rh4-XN-uCi"/>
+                            <constraint firstItem="gHD-7K-PEA" firstAttribute="centerX" secondItem="RBi-PM-rgD" secondAttribute="centerX" id="u9K-Xw-mf9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lhr-0I-MdE"/>
                     <connections>
                         <outlet property="scrollView" destination="gHD-7K-PEA" id="DBP-r2-DHh"/>
+                        <outlet property="spinner" destination="RBi-PM-rgD" id="eb1-gR-rQ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Mz-qy-NfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
